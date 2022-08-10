@@ -1,0 +1,20 @@
+{
+  "name": "final-project-template",
+  "scripts": {
+    "start": "lerna run start",
+    "build": "lerna run build --stream",
+    "clean": "lerna clean --y",
+    "test": "lerna run test",
+    "install:server": "lerna add --scope=server",
+    "install:client": "lerna add --scope=client",
+    "install:server:dev": "lerna add --scope=server --dev",
+    "install:client:dev": "lerna add --scope=client --dev"
+  },
+  "private": true,
+  "devDependencies": {
+    "lerna": "^5.4.0"
+  },
+  "workspaces": [
+    "projects/*"
+  ]
+}
