@@ -9,23 +9,24 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.Category, { foreignKey: "categoryId" });
+      this.hasMany(models.CartItem, { foreignKey: "productId" });
+      this.hasMany(models.TransactionItem, { foreignKey: "productId" });
     }
   }
   Product.init(
     {
-      id: DataTypes.INTEGER,
-      product_name: DataTypes.STRING,
-      category_id: DataTypes.INTEGER,
-      product_image: DataTypes.STRING,
-      product_description: DataTypes.STRING,
-      price: DataTypes.INTEGER,
-      qty: DataTypes.INTEGER,
-      isDeactivated: DataTypes.BOOLEAN,
+      name: DataTypes.STRING,
+      categoryId: DataTypes.INTEGER,
+      productImg: DataTypes.STRING,
+      modal_produk: DataTypes.INTEGER,
+      harga_produk: DataTypes.INTEGER,
+      quantity: DataTypes.INTEGER,
+      description: DataTypes.STRING,
     },
     {
       sequelize,
       modelName: "Product",
-      freezeTableName: true,
     }
   );
   return Product;

@@ -9,20 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.hasMany(models.TransactionItem, { foreignKey: "transactionId" });
+      this.belongsTo(models.User, { foreignKey: "userId" });
     }
   }
   Transaction.init(
     {
-      id: DataTypes.INTEGER,
-      date: DataTypes.NOW,
-      user_id: DataTypes.INTEGER,
-      total: DataTypes.INTEGER,
-      isCompleted: DataTypes.BOOLEAN,
+      userId: DataTypes.INTEGER,
+      totalPrice: DataTypes.INTEGER,
     },
     {
       sequelize,
       modelName: "Transaction",
-      freezeTableName: true,
     }
   );
   return Transaction;

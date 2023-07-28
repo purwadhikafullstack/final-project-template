@@ -9,27 +9,22 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.hasMany(models.Cart, { foreignKey: "userId" });
+      this.hasMany(models.Transaction, { foreignKey: "userId" });
     }
   }
   User.init(
     {
-      id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-      },
-      email: DataTypes.STRING,
       username: DataTypes.STRING,
+      email: DataTypes.STRING,
       password: DataTypes.STRING,
       role: DataTypes.STRING,
-      img_url: DataTypes.STRING,
-      isDisabled: DataTypes.BOOLEAN,
+      isActive: { type: DataTypes.BOOLEAN, defaultValue: false },
+      imgProfile: DataTypes.STRING,
     },
     {
       sequelize,
       modelName: "User",
-      freezeTableName: true,
     }
   );
   return User;
