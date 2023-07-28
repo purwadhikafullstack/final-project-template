@@ -1,5 +1,7 @@
 # Purwadhika Final Project Repository
-APA AJA
+need to install
+npm axios
+npm i formik yup
 This is monorepo contain frontend project using ReactJS and backend project using ExpressJS.
 
 ## Available Scripts

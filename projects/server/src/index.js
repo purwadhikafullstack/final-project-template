@@ -2,8 +2,8 @@ require("dotenv/config");
 const express = require("express");
 const cors = require("cors");
 const { join } = require("path");
-
 const db = require("../models");
+const { authRouter } = require("../Routers");
 // db.sequelize.sync({ alter: true });
 
 const PORT = process.env.PORT || 8000;
@@ -18,6 +18,7 @@ app.use(
 );
 
 app.use(express.json());
+app.use("/mini-project/api", authRouter)
 
 //#region API ROUTES
 
