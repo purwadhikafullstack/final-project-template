@@ -6,6 +6,9 @@ const db = require("../models");
 const { authRouter } = require("../Routers");
 // db.sequelize.sync({ alter: true });
 
+const db = require("../models");
+// db.sequelize.sync({ alter: true });
+
 const PORT = process.env.PORT || 8000;
 const app = express();
 app.use(
@@ -18,7 +21,7 @@ app.use(
 );
 
 app.use(express.json());
-app.use("/mini-project/api", authRouter)
+app.use("/mini-project/api", authRouter);
 
 //#region API ROUTES
 
