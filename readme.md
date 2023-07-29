@@ -1,5 +1,13 @@
 # Purwadhika Final Project Repository
-APA AJA
+need to install
+npm jsonwebtoken
+npm axios
+npm install bcrypt
+npm install sequelize
+npm install express
+npm install sequelize-cli
+npm install dotenv
+npm i formik yup
 This is monorepo contain frontend project using ReactJS and backend project using ExpressJS.
 
 ## Available Scripts
